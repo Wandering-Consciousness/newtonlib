@@ -15,6 +15,9 @@
 #	define EXPORTED
 #endif
 
+#include <inttypes.h> 
+
+
 //  Common structures
 //	namespaces stripped for C compatibility
 
@@ -52,8 +55,9 @@
 	const LatLng London = { 51.509865 , -0.118092 };
 	
 	//in c const is not what it seems, so:
-	#define POINT_ENTROPY_BYTES_CONST 13.0
-
+	#define COORD_ENTROPY_BITS_MAX 52
+	#define COORD_ENTROPY_BITS_ECO 32
+	
 	//why 13 if 2xDouble is 16 bytes?
 	//https://unix4lyfe.org/random-double/
 
@@ -62,8 +66,14 @@
 	// Where the ns are random hex digits.
 	// 13 bytes of entropy or 26 hex digits are required for a random point: doubl X + double Y
 		
-	static const unsigned int POINT_ENTROPY_BYTES = (unsigned int)POINT_ENTROPY_BYTES_CONST;
-	static const unsigned int POINT_ENTROPY_HEX = 2 * (unsigned int)POINT_ENTROPY_BYTES_CONST; //string hex representation
+	static const unsigned int POINT_ENTROPY_BYTES_MAX = (unsigned int)(COORD_ENTROPY_BITS_MAX*2/8);
+	static const unsigned int POINT_ENTROPY_HEX_MAX = (unsigned int)(COORD_ENTROPY_BITS_MAX*4/8); //string hex representation
+	
+    // new defaults (economy!):
+	static const unsigned int POINT_ENTROPY_BYTES_ECO = (unsigned int)(COORD_ENTROPY_BITS_ECO*2/8);
+	static const unsigned int POINT_ENTROPY_HEX_ECO = (unsigned int)(COORD_ENTROPY_BITS_ECO*4/8); //string hex representation
+
+
 	static const unsigned int RANDOM_SEED = 23;
 
 	//https://en.wikipedia.org/wiki/Standard_score

@@ -3,7 +3,7 @@
 
 #define TEST_COORDS_SIZE 15000
 #define TEST_HEX_RADIUS 3000
-#define TEST_HEX_SIZE 356902
+#define TEST_HEX_SIZE_FULL 356902
 static const char* TEST_HEX_NAME = "./test_entropy.hex";
 
 const double TEST_COORDS[TEST_COORDS_SIZE] =

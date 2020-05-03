@@ -30,6 +30,7 @@ unsigned char hex2int(const char input)
 
 char* getFromANU( const unsigned long hexSize)
 {
+	//const char* TEST_HEX_NAME = "./4_entropydump.hex";
 	// Simulated QRNG poll example, real ANU rng output loaded from file
 	char* myHexString = malloc(hexSize);
 	if (myHexString == NULL)

@@ -1,4 +1,4 @@
-VERSION=0.95.5
+VERSION=0.96.1
 STRUCTURE=Export Attractors Geometry Triangulation KBDTree Miniball Linux
 ROOT=$(CURDIR)/..
 
@@ -86,8 +86,7 @@ $(BUILD_DIR)/$(EXE): $(OBJ_DIR)/$(EXE).o
 
 $(BUILD_DIR)/$(SLIB): $(LOBJ)
 	mkdir -p $(@D)	
-	ar ruU $@.$(VERSION) $^
-	ranlib $@.$(VERSION)
+	ar crs $@.$(VERSION) $^
 	ln -fs $(SLIB).$(VERSION) $(BUILD_DIR)/$(SLIB) 
 
 $(BUILD_DIR)/$(DLIB): $(LOBJ)

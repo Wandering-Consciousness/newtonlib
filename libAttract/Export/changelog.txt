@@ -1,6 +1,19 @@
 Release notes
 
-Version 0.95.4 (alpha)
+Version 0.97.0 (alpha, WIP)
+----------------------
+- GID as string (65 bytes)
+- Fixed variable width on all platforms (uint_64t/uint_32t)
+- Global settings per instance (tresholds, adjustable precision etc)
+- C++ example dropped
+
+Version 0.96.1 ->THIS<- (alpha, last version before interface change)
+----------------------
+- adjusted precision for entropy economy (160% less load), kudos to Theodore Smith!
+- applied /MT /MTD to all configs not only x32, removed runtime dll dependency
+- fixed overlap issue
+
+Version 0.95.5 (alpha)
 ----------------------
 - Project internal structure rehaul 
 - added sample VC projects to distribution
