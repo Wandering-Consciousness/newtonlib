@@ -1,0 +1,40 @@
+Release notes
+
+Version 0.95.4 (alpha)
+----------------------
+- Project internal structure rehaul 
+- added sample VC projects to distribution
+- added win distribution to production scripts
+- Added getVersion
+- Moved temporary allocation holders deallocation to releaseEngine
+- zScore asymmetry fix
+- Added testHex and c-compatible testcoords
+- fixed initWithHex
+- fixed wrong categorization (void as attractors with negative score)
+- fixed coordinate print
+- added example for each of inits
+
+Version 0.94 (alpha)
+----------------------
+- Added versioning header
+- Added automated makefile for unix builds
+- Added production scripts
+- Added changelog (this!)
+
+Version 0.93.3 (alpha)
+----------------------
+- First working C# interface wrapper over C header for DLL
+- New C init options (by coords)
+- Added rarity interface stub
+- Various bugfixes
+
+Version 0.92 (alpha)
+----------------------
+- Moved from C++ ABI to C ABI
+- Added C header file
+- Thread safety locks
+- Various bugfixes
+
+Version 0.91 (alpha)
+----------------------
+- initial release
